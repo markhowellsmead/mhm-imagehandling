@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Image handling
-Plugin URI: https://github.com/mhmli/
+Plugin URI: https://github.com/mhmli/mhm-imagehandling
 Description: Redirect all image requests to a PHP script so that e.g. watermarking and re-sizing can take place on-the-fly. No imagess will be generated or cached on the server.
 Author: Mark Howells-Mead
 Version: 1.0
-Author URI: https://github.com/mhmli/
+Author URI: http://permanenttourist.ch/
 */
 
 class MHM_Imagehandling {
