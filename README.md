@@ -4,6 +4,8 @@ Redirect all JPG requests to a PHP script so that watermarking can take place on
 ## Usage
 Install the plugin and use the options (Settings » Image handling) to control the addition of a watermark to all JPG images.
 
+Plain text watermarks will be available in a future version.
+
 ##Author
 Mark Howells-Mead | www.permanenttourist.ch/github | Since August 2015
 
