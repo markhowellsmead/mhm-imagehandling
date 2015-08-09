@@ -50,6 +50,17 @@ class AddTextWaterMark {
 	}
 
 	//////////////////////////////////////////////////
+
+	private function fail($statuscode){
+		switch($statuscode){
+			case '404':
+			    header('HTTP/1.0 404 Not Found');
+				die('File not found');
+			break;
+		}
+	}//fail
+
+	//////////////////////////////////////////////////
 	
 	private function dump($var,$die=false){
 		echo '<pre>' .print_r($var,1). '</pre>';
@@ -215,6 +226,11 @@ class AddTextWaterMark {
 	private function getSource(){
 
 		$this->source_path = $_SERVER['DOCUMENT_ROOT'].$_SERVER['REQUEST_URI'];
+		
+		if( !file_exists($this->source_path) ){
+			$this->fail('404');
+		}
+		
 		$this->photo = imagecreatefromjpeg($this->source_path);
 
 		list($width, $height) = getimagesize($this->source_path);
