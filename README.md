@@ -1,5 +1,5 @@
 # Image handling for WordPress
-Redirect all JPG requests to a PHP script so that watermarking can take place on-the-fly. No images will be cached on the server.
+WordPress plugin. Redirect all JPG requests to a PHP script so that watermarking can take place on-the-fly. No images will be cached on the server.
 
 ## Usage
 Install the plugin and use the options (Settings » Image handling) to control the addition of a watermark to all JPG images.
