@@ -58,7 +58,7 @@ class MHM_Imagehandling {
             $uploads_path = 'wp-content/uploads/';
 
             //write the new .htaccess rules to redirect image serving to the image serving proxy
-            $non_wp_rules = array($uploads_path.'(.*)\.(jpe?g|gif|png)$' => $this->handlerScript);
+            $non_wp_rules = array($uploads_path.'(.*)\.(jpe?g)$' => $this->handlerScript);
 
 			/*foreach($non_wp_rules as $array_value){
 				if($array_value != NULL){
