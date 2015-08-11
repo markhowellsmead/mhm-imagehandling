@@ -32,6 +32,7 @@ class MHM_Imagehandling {
 		$this->resourcesURI	 = plugin_dir_url( __FILE__ ).'Resources';
 		$this->handlerScript = preg_replace('~^\/~', '', str_replace($_SERVER['DOCUMENT_ROOT'], '', $this->resourcesPath) . 'Private/RequestHandler.php');
 
+        register_activation_hook( __FILE__, array( &$this, 'add_rules' ) );
         register_deactivation_hook( __FILE__, array( &$this, 'remove_rules' ) );
 
 		$this->initBackend();
@@ -84,7 +85,6 @@ class MHM_Imagehandling {
 	//////////////////////////////////////////////////
 
 	private function initBackend(){
-		add_action( 'admin_init', array(&$this, 'add_rules') ); // htaccess
 		add_action( 'admin_menu', array(&$this, 'add_admin_menu') );
 		add_action( 'admin_init', array(&$this, 'admin_settings_init') );
 	}
