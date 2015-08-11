@@ -93,18 +93,20 @@ class MHM_Imagehandling {
 
 	function add_admin_menu() { 
 		add_options_page( 'Image handling', 'Image handling', 'manage_options', 'image_handling', array(&$this, 'options_page') );
+		add_action('admin_print_scripts', array(&$this, 'admin_scripts') );
+	}
+
+	//////////////////////////////////////////////////
+
+	function admin_scripts(){
+		wp_enqueue_script('admin_imageupload', plugin_dir_url( __FILE__ ).'Resources/Public/JavaScript/admin_uploadimage.js', 'jquery', '1.0', true);
+		wp_enqueue_media();
 	}
 
 	//////////////////////////////////////////////////
 
 	function admin_settings_init() { 
-	
-		wp_enqueue_script('jquery');
-		wp_enqueue_script('admin_imageupload', plugin_dir_url( __FILE__ ).'Resources/Public/JavaScript/admin_uploadimage.js', 'jquery', '1.0', true);
-	
-		// Enqueue the Media Uploader script
-		wp_enqueue_media();
-	
+
 		register_setting( 'pluginPage', 'mhm_imagehandling_settings' );
 	
 		add_settings_section(
